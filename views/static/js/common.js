@@ -35,5 +35,19 @@ define(["jquery", "template", "cookie"], function($, template){
         }
       })
 		})
+    //侧边栏课程管理切换
+    $(".navs>ul>li>ul").parent().click(function () {
+    //alert(1);
+      $(this).children('ul').stop().slideToggle();
+    })
+  //让当前链接菜单高亮
+$('.navs a').each(function (index,ele) {
+  //console.log(ele);ele为dom元素
+  //console.log($(ele).attr('href'));
+  //console.log(location.pathname);
+  if($(ele).attr('href') == location.pathname ){
+    $(ele).addClass('active');
+  }
+})
 	})
 })
