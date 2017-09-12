@@ -22,5 +22,18 @@ define(["jquery", "template", "cookie"], function($, template){
 			var html = template("profile_tpl", userinfo);
 			$("#profile").html(html);
 		}
+    //ÍË³öµÇÂ¼¹¦ÄÜ
+		$('#logout_btn').click(function () {
+      $.ajax({
+        url:'/api/logout',
+        type:'post',
+        success:function (data) {
+            //console.log(data);
+          if(data.code==200){
+             location.href='/dashboard/login'
+          }
+        }
+      })
+		})
 	})
 })
